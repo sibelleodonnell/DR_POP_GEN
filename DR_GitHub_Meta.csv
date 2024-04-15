@@ -1,0 +1,233 @@
+Run,BioProject,BioSample,DATASTORE filetype,Experiment,geo_loc_name_country,geo_loc_name_country_continent,lat_lon,Reef_Site,Library Name,Organism,Sample Name
+SRR28497447,PRJNA1093451,SAMN40654707,"fastq,run.zq,sra",SRX24099587,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A44,Agaricia agaricites,A44.fastq
+SRR28497448,PRJNA1093451,SAMN40654706,"run.zq,fastq,sra",SRX24099586,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A43,Agaricia agaricites,A43.fastq
+SRR28497449,PRJNA1093451,SAMN40654705,"fastq,sra,run.zq",SRX24099585,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A42,Agaricia agaricites,A42.fastq
+SRR28497450,PRJNA1093451,SAMN40654704,"sra,fastq,run.zq",SRX24099584,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A41,Agaricia agaricites,A41.fastq
+SRR28497451,PRJNA1093451,SAMN40654703,"sra,run.zq,fastq",SRX24099583,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A40,Agaricia agaricites,A40.fastq
+SRR28497452,PRJNA1093451,SAMN40654702,"fastq,sra,run.zq",SRX24099582,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A39,Agaricia agaricites,A39.fastq
+SRR28497453,PRJNA1093451,SAMN40654701,"sra,run.zq,fastq",SRX24099581,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A37,Agaricia agaricites,A37.fastq
+SRR28497454,PRJNA1093451,SAMN40654700,"run.zq,fastq,sra",SRX24099580,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A36,Agaricia agaricites,A36.fastq
+SRR28497455,PRJNA1093451,SAMN40654820,"sra,run.zq,fastq",SRX24099579,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P79,Porites astreoides,P79.fastq
+SRR28497456,PRJNA1093451,SAMN40654819,"run.zq,fastq,sra",SRX24099578,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P78,Porites astreoides,P78.fastq
+SRR28497457,PRJNA1093451,SAMN40654818,"run.zq,fastq,sra",SRX24099577,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P77,Porites astreoides,P77.fastq
+SRR28497458,PRJNA1093451,SAMN40654629,"run.zq,fastq,sra",SRX24099576,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O29,Orbicella faveolata,O29.fastq
+SRR28497459,PRJNA1093451,SAMN40654817,"run.zq,fastq,sra",SRX24099575,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P76,Porites astreoides,P76.fastq
+SRR28497460,PRJNA1093451,SAMN40654816,"sra,run.zq,fastq",SRX24099574,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P75,Porites astreoides,P75.fastq
+SRR28497461,PRJNA1093451,SAMN40654815,"run.zq,sra,fastq",SRX24099573,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P74,Porites astreoides,P74.fastq
+SRR28497462,PRJNA1093451,SAMN40654814,"run.zq,sra,fastq",SRX24099572,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P73,Porites astreoides,P73.fastq
+SRR28497463,PRJNA1093451,SAMN40654813,"sra,fastq,run.zq",SRX24099571,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P72,Porites astreoides,P72.fastq
+SRR28497464,PRJNA1093451,SAMN40654812,"sra,run.zq,fastq",SRX24099570,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P71,Porites astreoides,P71.fastq
+SRR28497465,PRJNA1093451,SAMN40654811,"sra,run.zq,fastq",SRX24099569,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P70,Porites astreoides,P70.fastq
+SRR28497466,PRJNA1093451,SAMN40654810,"run.zq,sra,fastq",SRX24099568,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P69,Porites astreoides,P69.fastq
+SRR28497467,PRJNA1093451,SAMN40654809,"fastq,run.zq,sra",SRX24099567,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P68,Porites astreoides,P68.fastq
+SRR28497468,PRJNA1093451,SAMN40654808,"fastq,sra,run.zq",SRX24099566,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P66,Porites astreoides,P66.fastq
+SRR28497469,PRJNA1093451,SAMN40654628,"run.zq,sra,fastq",SRX24099565,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O27,Orbicella faveolata,O27.fastq
+SRR28497470,PRJNA1093451,SAMN40654610,"run.zq,sra,fastq",SRX24099564,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O3,Orbicella faveolata,O3.fastq
+SRR28497471,PRJNA1093451,SAMN40654807,"sra,run.zq,fastq",SRX24099563,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P65,Porites astreoides,P65.fastq
+SRR28497472,PRJNA1093451,SAMN40654806,"fastq,run.zq,sra",SRX24099562,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P64,Porites astreoides,P64.fastq
+SRR28497473,PRJNA1093451,SAMN40654805,"sra,run.zq,fastq",SRX24099561,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P63,Porites astreoides,P63.fastq
+SRR28497474,PRJNA1093451,SAMN40654804,"sra,fastq,run.zq",SRX24099560,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P62,Porites astreoides,P62.fastq
+SRR28497475,PRJNA1093451,SAMN40654803,"sra,fastq,run.zq",SRX24099559,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P61,Porites astreoides,P61.fastq
+SRR28497476,PRJNA1093451,SAMN40654802,"sra,run.zq,fastq",SRX24099558,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P60,Porites astreoides,P60.fastq
+SRR28497477,PRJNA1093451,SAMN40654801,"sra,run.zq,fastq",SRX24099557,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P59,Porites astreoides,P59.fastq
+SRR28497478,PRJNA1093451,SAMN40654800,"sra,fastq,run.zq",SRX24099556,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P58,Porites astreoides,P58.fastq
+SRR28497479,PRJNA1093451,SAMN40654799,"sra,run.zq,fastq",SRX24099555,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P57,Porites astreoides,P57.fastq
+SRR28497480,PRJNA1093451,SAMN40654798,"run.zq,sra,fastq",SRX24099554,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P56,Porites astreoides,P56.fastq
+SRR28497481,PRJNA1093451,SAMN40654627,"sra,fastq,run.zq",SRX24099553,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O26,Orbicella faveolata,O26.fastq
+SRR28497482,PRJNA1093451,SAMN40654797,"run.zq,fastq,sra",SRX24099552,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P55,Porites astreoides,P55.fastq
+SRR28497483,PRJNA1093451,SAMN40654796,"fastq,run.zq,sra",SRX24099551,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P54,Porites astreoides,P54.fastq
+SRR28497484,PRJNA1093451,SAMN40654795,"sra,fastq,run.zq",SRX24099550,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P53,Porites astreoides,P53.fastq
+SRR28497485,PRJNA1093451,SAMN40654794,"sra,fastq,run.zq",SRX24099549,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P52,Porites astreoides,P52.fastq
+SRR28497486,PRJNA1093451,SAMN40654793,"sra,fastq,run.zq",SRX24099548,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P51,Porites astreoides,P51.fastq
+SRR28497487,PRJNA1093451,SAMN40654699,"sra,run.zq,fastq",SRX24099547,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A35,Agaricia agaricites,A35.fastq
+SRR28497488,PRJNA1093451,SAMN40654698,"run.zq,sra,fastq",SRX24099546,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A34,Agaricia agaricites,A34.fastq
+SRR28497489,PRJNA1093451,SAMN40654617,"run.zq,sra,fastq",SRX24099545,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O11,Orbicella faveolata,O11.fastq
+SRR28497490,PRJNA1093451,SAMN40654697,"sra,fastq,run.zq",SRX24099544,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A33,Agaricia agaricites,A33.fastq
+SRR28497491,PRJNA1093451,SAMN40654696,"run.zq,sra,fastq",SRX24099543,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A32,Agaricia agaricites,A32.fastq
+SRR28497492,PRJNA1093451,SAMN40654695,"fastq,run.zq,sra",SRX24099542,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A31,Agaricia agaricites,A31.fastq
+SRR28497493,PRJNA1093451,SAMN40654694,"run.zq,sra,fastq",SRX24099541,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A30,Agaricia agaricites,A30.fastq
+SRR28497494,PRJNA1093451,SAMN40654693,"fastq,run.zq,sra",SRX24099540,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A29,Agaricia agaricites,A29.fastq
+SRR28497495,PRJNA1093451,SAMN40654692,"sra,run.zq,fastq",SRX24099539,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A28,Agaricia agaricites,A28.fastq
+SRR28497496,PRJNA1093451,SAMN40654691,"sra,run.zq,fastq",SRX24099538,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A27,Agaricia agaricites,A27.fastq
+SRR28497497,PRJNA1093451,SAMN40654690,"fastq,sra,run.zq",SRX24099537,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A26,Agaricia agaricites,A26.fastq
+SRR28497498,PRJNA1093451,SAMN40654689,"run.zq,sra,fastq",SRX24099536,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A22,Agaricia agaricites,A22.fastq
+SRR28497499,PRJNA1093451,SAMN40654688,"fastq,run.zq,sra",SRX24099535,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,A21,Agaricia agaricites,A21.fastq
+SRR28497500,PRJNA1093451,SAMN40654616,"sra,fastq,run.zq",SRX24099534,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O10,Orbicella faveolata,O10.fastq
+SRR28497501,PRJNA1093451,SAMN40654687,"fastq,run.zq,sra",SRX24099533,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A20,Agaricia agaricites,A20.fastq
+SRR28497502,PRJNA1093451,SAMN40654686,"run.zq,fastq,sra",SRX24099532,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A19,Agaricia agaricites,A19.fastq
+SRR28497503,PRJNA1093451,SAMN40654685,"fastq,sra,run.zq",SRX24099531,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A18,Agaricia agaricites,A18.fastq
+SRR28497504,PRJNA1093451,SAMN40654684,"sra,run.zq,fastq",SRX24099530,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A17,Agaricia agaricites,A17.fastq
+SRR28497505,PRJNA1093451,SAMN40654683,"run.zq,sra,fastq",SRX24099529,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A15,Agaricia agaricites,A15.fastq
+SRR28497506,PRJNA1093451,SAMN40654682,"fastq,sra,run.zq",SRX24099528,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A14,Agaricia agaricites,A14.fastq
+SRR28497507,PRJNA1093451,SAMN40654681,"run.zq,sra,fastq",SRX24099527,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A13,Agaricia agaricites,A13.fastq
+SRR28497508,PRJNA1093451,SAMN40654680,"run.zq,fastq,sra",SRX24099526,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A12,Agaricia agaricites,A12.fastq
+SRR28497509,PRJNA1093451,SAMN40654679,"run.zq,fastq,sra",SRX24099525,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A11,Agaricia agaricites,A11.fastq
+SRR28497510,PRJNA1093451,SAMN40654678,"fastq,run.zq,sra",SRX24099524,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A4,Agaricia agaricites,A4.fastq
+SRR28497511,PRJNA1093451,SAMN40654615,"sra,fastq,run.zq",SRX24099523,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O9,Orbicella faveolata,O9.fastq
+SRR28497512,PRJNA1093451,SAMN40654677,"fastq,sra,run.zq",SRX24099522,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A3,Agaricia agaricites,A3.fastq
+SRR28497513,PRJNA1093451,SAMN40654676,"sra,run.zq,fastq",SRX24099521,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A2,Agaricia agaricites,A2.fastq
+SRR28497514,PRJNA1093451,SAMN40654675,"fastq,run.zq,sra",SRX24099520,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,A1,Agaricia agaricites,A1.fastq
+SRR28497515,PRJNA1093451,SAMN40654674,"sra,run.zq,fastq",SRX24099519,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O100,Orbicella faveolata,O100.fastq
+SRR28497516,PRJNA1093451,SAMN40654673,"fastq,sra,run.zq",SRX24099518,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O99,Orbicella faveolata,O99.fastq
+SRR28497517,PRJNA1093451,SAMN40654672,"fastq,sra,run.zq",SRX24099517,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O98,Orbicella faveolata,O98.fastq
+SRR28497518,PRJNA1093451,SAMN40654671,"run.zq,fastq,sra",SRX24099516,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O97,Orbicella faveolata,O97.fastq
+SRR28497519,PRJNA1093451,SAMN40654792,"fastq,sra,run.zq",SRX24099515,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P50,Porites astreoides,P50.fastq
+SRR28497520,PRJNA1093451,SAMN40654791,"fastq,sra,run.zq",SRX24099514,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P49,Porites astreoides,P49.fastq
+SRR28497521,PRJNA1093451,SAMN40654790,"fastq,run.zq,sra",SRX24099513,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P48,Porites astreoides,P48.fastq
+SRR28497522,PRJNA1093451,SAMN40654789,"sra,fastq,run.zq",SRX24099512,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P47,Porites astreoides,P47.fastq
+SRR28497523,PRJNA1093451,SAMN40654788,"run.zq,sra,fastq",SRX24099511,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P46,Porites astreoides,P46.fastq
+SRR28497524,PRJNA1093451,SAMN40654626,"run.zq,sra,fastq",SRX24099510,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O25,Orbicella faveolata,O25.fastq
+SRR28497525,PRJNA1093451,SAMN40654787,"run.zq,fastq,sra",SRX24099509,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P45,Porites astreoides,P45.fastq
+SRR28497526,PRJNA1093451,SAMN40654786,"run.zq,sra,fastq",SRX24099508,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P43,Porites astreoides,P43.fastq
+SRR28497527,PRJNA1093451,SAMN40654785,"fastq,run.zq,sra",SRX24099507,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P42,Porites astreoides,P42.fastq
+SRR28497528,PRJNA1093451,SAMN40654784,"fastq,run.zq,sra",SRX24099506,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,P41,Porites astreoides,P41.fastq
+SRR28497529,PRJNA1093451,SAMN40654783,"run.zq,sra,fastq",SRX24099505,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P40,Porites astreoides,P40.fastq
+SRR28497530,PRJNA1093451,SAMN40654782,"run.zq,sra,fastq",SRX24099504,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P39,Porites astreoides,P39.fastq
+SRR28497531,PRJNA1093451,SAMN40654781,"run.zq,fastq,sra",SRX24099503,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P38,Porites astreoides,P38.fastq
+SRR28497532,PRJNA1093451,SAMN40654780,"fastq,run.zq,sra",SRX24099502,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P37,Porites astreoides,P37.fastq
+SRR28497533,PRJNA1093451,SAMN40654779,"fastq,sra,run.zq",SRX24099501,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P36,Porites astreoides,P36.fastq
+SRR28497534,PRJNA1093451,SAMN40654778,"run.zq,sra,fastq",SRX24099500,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P35,Porites astreoides,P35.fastq
+SRR28497535,PRJNA1093451,SAMN40654625,"fastq,sra,run.zq",SRX24099499,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O24,Orbicella faveolata,O24.fastq
+SRR28497536,PRJNA1093451,SAMN40654777,"run.zq,sra,fastq",SRX24099498,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P34,Porites astreoides,P34.fastq
+SRR28497537,PRJNA1093451,SAMN40654776,"run.zq,sra,fastq",SRX24099497,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P33,Porites astreoides,P33.fastq
+SRR28497538,PRJNA1093451,SAMN40654775,"fastq,run.zq,sra",SRX24099496,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P32,Porites astreoides,P32.fastq
+SRR28497539,PRJNA1093451,SAMN40654774,"sra,run.zq,fastq",SRX24099495,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P31,Porites astreoides,P31.fastq
+SRR28497540,PRJNA1093451,SAMN40654773,"sra,fastq,run.zq",SRX24099494,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P30,Porites astreoides,P30.fastq
+SRR28497541,PRJNA1093451,SAMN40654772,"fastq,run.zq,sra",SRX24099493,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P29,Porites astreoides,P29.fastq
+SRR28497542,PRJNA1093451,SAMN40654771,"sra,fastq,run.zq",SRX24099492,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P28,Porites astreoides,P28.fastq
+SRR28497543,PRJNA1093451,SAMN40654770,"fastq,run.zq,sra",SRX24099491,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P27,Porites astreoides,P27.fastq
+SRR28497544,PRJNA1093451,SAMN40654769,"run.zq,sra,fastq",SRX24099490,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P26,Porites astreoides,P26.fastq
+SRR28497545,PRJNA1093451,SAMN40654768,"sra,fastq,run.zq",SRX24099489,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P25,Porites astreoides,P25.fastq
+SRR28497546,PRJNA1093451,SAMN40654624,"run.zq,sra,fastq",SRX24099488,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O22,Orbicella faveolata,O22.fastq
+SRR28497547,PRJNA1093451,SAMN40654767,"fastq,sra,run.zq",SRX24099487,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P24,Porites astreoides,P24.fastq
+SRR28497548,PRJNA1093451,SAMN40654766,"fastq,run.zq,sra",SRX24099486,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P23,Porites astreoides,P23.fastq
+SRR28497549,PRJNA1093451,SAMN40654765,"sra,run.zq,fastq",SRX24099485,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P22,Porites astreoides,P22.fastq
+SRR28497550,PRJNA1093451,SAMN40654764,"run.zq,sra,fastq",SRX24099484,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,P21,Porites astreoides,P21.fastq
+SRR28497551,PRJNA1093451,SAMN40654670,"run.zq,sra,fastq",SRX24099483,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O95,Orbicella faveolata,O95.fastq
+SRR28497552,PRJNA1093451,SAMN40654669,"sra,run.zq,fastq",SRX24099482,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O94,Orbicella faveolata,O94.fastq
+SRR28497553,PRJNA1093451,SAMN40654668,"sra,fastq,run.zq",SRX24099481,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O93,Orbicella faveolata,O93.fastq
+SRR28497554,PRJNA1093451,SAMN40654614,"sra,fastq,run.zq",SRX24099480,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O8,Orbicella faveolata,O8.fastq
+SRR28497555,PRJNA1093451,SAMN40654667,"fastq,sra,run.zq",SRX24099479,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O92,Orbicella faveolata,O92.fastq
+SRR28497556,PRJNA1093451,SAMN40654666,"sra,fastq,run.zq",SRX24099478,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O91,Orbicella faveolata,O91.fastq
+SRR28497557,PRJNA1093451,SAMN40654665,"sra,fastq,run.zq",SRX24099477,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O89,Orbicella faveolata,O89.fastq
+SRR28497558,PRJNA1093451,SAMN40654664,"run.zq,sra,fastq",SRX24099476,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O88,Orbicella faveolata,O88.fastq
+SRR28497559,PRJNA1093451,SAMN40654663,"run.zq,sra,fastq",SRX24099475,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O87,Orbicella faveolata,O87.fastq
+SRR28497560,PRJNA1093451,SAMN40654662,"fastq,run.zq,sra",SRX24099474,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O86,Orbicella faveolata,O86.fastq
+SRR28497561,PRJNA1093451,SAMN40654661,"run.zq,fastq,sra",SRX24099473,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O84,Orbicella faveolata,O84.fastq
+SRR28497562,PRJNA1093451,SAMN40654660,"run.zq,sra,fastq",SRX24099472,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O83,Orbicella faveolata,O83.fastq
+SRR28497563,PRJNA1093451,SAMN40654659,"sra,fastq,run.zq",SRX24099471,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O82,Orbicella faveolata,O82.fastq
+SRR28497564,PRJNA1093451,SAMN40654658,"run.zq,sra,fastq",SRX24099470,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,O81,Orbicella faveolata,O81.fastq
+SRR28497565,PRJNA1093451,SAMN40654613,"run.zq,sra,fastq",SRX24099469,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O6,Orbicella faveolata,O6.fastq
+SRR28497566,PRJNA1093451,SAMN40654657,"fastq,sra,run.zq",SRX24099468,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,O80,Orbicella faveolata,O80.fastq
+SRR28497567,PRJNA1093451,SAMN40654656,"run.zq,fastq,sra",SRX24099467,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,O78,Orbicella faveolata,O78.fastq
+SRR28497568,PRJNA1093451,SAMN40654655,"sra,run.zq,fastq",SRX24099466,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,O75,Orbicella faveolata,O75.fastq
+SRR28497569,PRJNA1093451,SAMN40654654,"fastq,sra,run.zq",SRX24099465,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,O73,Orbicella faveolata,O73.fastq
+SRR28497570,PRJNA1093451,SAMN40654653,"fastq,sra,run.zq",SRX24099464,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,O65,Orbicella faveolata,O65.fastq
+SRR28497571,PRJNA1093451,SAMN40654652,"fastq,sra,run.zq",SRX24099463,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,O62,Orbicella faveolata,O62.fastq
+SRR28497572,PRJNA1093451,SAMN40654651,"fastq,sra,run.zq",SRX24099462,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,O61,Orbicella faveolata,O61.fastq
+SRR28497573,PRJNA1093451,SAMN40654650,"sra,fastq,run.zq",SRX24099461,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O60,Orbicella faveolata,O60.fastq
+SRR28497574,PRJNA1093451,SAMN40654649,"run.zq,fastq,sra",SRX24099460,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O58,Orbicella faveolata,O58.fastq
+SRR28497575,PRJNA1093451,SAMN40654648,"fastq,run.zq,sra",SRX24099459,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O57,Orbicella faveolata,O57.fastq
+SRR28497576,PRJNA1093451,SAMN40654612,"run.zq,fastq,sra",SRX24099458,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O5,Orbicella faveolata,O5.fastq
+SRR28497577,PRJNA1093451,SAMN40654647,"sra,fastq",SRX24099457,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O54,Orbicella faveolata,O54.fastq
+SRR28497578,PRJNA1093451,SAMN40654646,"fastq,sra",SRX24099456,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O53,Orbicella faveolata,O53.fastq
+SRR28497579,PRJNA1093451,SAMN40654645,"run.zq,sra,fastq",SRX24099455,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O51,Orbicella faveolata,O51.fastq
+SRR28497580,PRJNA1093451,SAMN40654644,"fastq,sra,run.zq",SRX24099454,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O50,Orbicella faveolata,O50.fastq
+SRR28497581,PRJNA1093451,SAMN40654643,"sra,run.zq,fastq",SRX24099453,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O48,Orbicella faveolata,O48.fastq
+SRR28497582,PRJNA1093451,SAMN40654642,"sra,run.zq,fastq",SRX24099452,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O47,Orbicella faveolata,O47.fastq
+SRR28497583,PRJNA1093451,SAMN40654763,"sra,fastq,run.zq",SRX24099451,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P20,Porites astreoides,P20.fastq
+SRR28497584,PRJNA1093451,SAMN40654762,"run.zq,fastq,sra",SRX24099450,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P18,Porites astreoides,P18.fastq
+SRR28497585,PRJNA1093451,SAMN40654761,"sra,fastq,run.zq",SRX24099449,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P17,Porites astreoides,P17.fastq
+SRR28497586,PRJNA1093451,SAMN40654760,"run.zq,sra,fastq",SRX24099448,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P16,Porites astreoides,P16.fastq
+SRR28497587,PRJNA1093451,SAMN40654759,"fastq,run.zq,sra",SRX24099447,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P14,Porites astreoides,P14.fastq
+SRR28497588,PRJNA1093451,SAMN40654758,"fastq,run.zq,sra",SRX24099446,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P13,Porites astreoides,P13.fastq
+SRR28497589,PRJNA1093451,SAMN40654623,"fastq,sra,run.zq",SRX24099445,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O17,Orbicella faveolata,O17.fastq
+SRR28497590,PRJNA1093451,SAMN40654757,"sra,run.zq,fastq",SRX24099444,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P11,Porites astreoides,P11.fastq
+SRR28497591,PRJNA1093451,SAMN40654756,"fastq,run.zq,sra",SRX24099443,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P10,Porites astreoides,P10.fastq
+SRR28497592,PRJNA1093451,SAMN40654755,"fastq,run.zq,sra",SRX24099442,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P9,Porites astreoides,P9.fastq
+SRR28497593,PRJNA1093451,SAMN40654754,"fastq,sra,run.zq",SRX24099441,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P8,Porites astreoides,P8.fastq
+SRR28497594,PRJNA1093451,SAMN40654753,"fastq,sra",SRX24099440,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P7,Porites astreoides,P7.fastq
+SRR28497595,PRJNA1093451,SAMN40654752,"run.zq,fastq,sra",SRX24099439,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P4,Porites astreoides,P4.fastq
+SRR28497596,PRJNA1093451,SAMN40654751,"sra,run.zq,fastq",SRX24099438,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P3,Porites astreoides,P3.fastq
+SRR28497597,PRJNA1093451,SAMN40654750,"run.zq,fastq,sra",SRX24099437,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,P2,Porites astreoides,P2.fastq
+SRR28497598,PRJNA1093451,SAMN40654749,"run.zq,fastq,sra",SRX24099436,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A100,Agaricia agaricites,A100.fastq
+SRR28497599,PRJNA1093451,SAMN40654748,"fastq,run.zq,sra",SRX24099435,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A99,Agaricia agaricites,A99.fastq
+SRR28497600,PRJNA1093451,SAMN40654622,"sra,run.zq,fastq",SRX24099434,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O16,Orbicella faveolata,O16.fastq
+SRR28497601,PRJNA1093451,SAMN40654747,"sra,run.zq,fastq",SRX24099433,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A98,Agaricia agaricites,A98.fastq
+SRR28497602,PRJNA1093451,SAMN40654746,"fastq,run.zq,sra",SRX24099432,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A96,Agaricia agaricites,A96.fastq
+SRR28497603,PRJNA1093451,SAMN40654745,"run.zq,fastq,sra",SRX24099431,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A95,Agaricia agaricites,A95.fastq
+SRR28497604,PRJNA1093451,SAMN40654744,"run.zq,fastq,sra",SRX24099430,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A94,Agaricia agaricites,A94.fastq
+SRR28497605,PRJNA1093451,SAMN40654743,"run.zq,sra,fastq",SRX24099429,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A93,Agaricia agaricites,A93.fastq
+SRR28497606,PRJNA1093451,SAMN40654742,"fastq,sra,run.zq",SRX24099428,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A92,Agaricia agaricites,A92.fastq
+SRR28497607,PRJNA1093451,SAMN40654741,"fastq,sra,run.zq",SRX24099427,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A84,Agaricia agaricites,A84.fastq
+SRR28497608,PRJNA1093451,SAMN40654740,"sra,fastq",SRX24099426,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A82,Agaricia agaricites,A82.fastq
+SRR28497609,PRJNA1093451,SAMN40654739,"fastq,run.zq,sra",SRX24099425,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,A81,Agaricia agaricites,A81.fastq
+SRR28497610,PRJNA1093451,SAMN40654738,"fastq,run.zq,sra",SRX24099424,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A80,Agaricia agaricites,A80.fastq
+SRR28497611,PRJNA1093451,SAMN40654621,"sra,fastq,run.zq",SRX24099423,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O15,Orbicella faveolata,O15.fastq
+SRR28497612,PRJNA1093451,SAMN40654737,"fastq,sra,run.zq",SRX24099422,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A79,Agaricia agaricites,A79.fastq
+SRR28497613,PRJNA1093451,SAMN40654736,"sra,run.zq,fastq",SRX24099421,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A78,Agaricia agaricites,A78.fastq
+SRR28497614,PRJNA1093451,SAMN40654735,"run.zq,sra,fastq",SRX24099420,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A77,Agaricia agaricites,A77.fastq
+SRR28497615,PRJNA1093451,SAMN40654641,"fastq,sra,run.zq",SRX24099419,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O44,Orbicella faveolata,O44.fastq
+SRR28497616,PRJNA1093451,SAMN40654640,"sra,run.zq,fastq",SRX24099418,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O43,Orbicella faveolata,O43.fastq
+SRR28497617,PRJNA1093451,SAMN40654639,"fastq,run.zq,sra",SRX24099417,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O42,Orbicella faveolata,O42.fastq
+SRR28497618,PRJNA1093451,SAMN40654638,"sra,run.zq,fastq",SRX24099416,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,O41,Orbicella faveolata,O41.fastq
+SRR28497619,PRJNA1093451,SAMN40654611,"fastq,sra,run.zq",SRX24099415,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O4,Orbicella faveolata,O4.fastq
+SRR28497620,PRJNA1093451,SAMN40654637,"run.zq,sra,fastq",SRX24099414,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O40,Orbicella faveolata,O40.fastq
+SRR28497621,PRJNA1093451,SAMN40654636,"sra,fastq,run.zq",SRX24099413,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O38,Orbicella faveolata,O38.fastq
+SRR28497622,PRJNA1093451,SAMN40654635,"fastq,sra,run.zq",SRX24099412,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O37,Orbicella faveolata,O37.fastq
+SRR28497623,PRJNA1093451,SAMN40654634,"run.zq,fastq,sra",SRX24099411,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O36,Orbicella faveolata,O36.fastq
+SRR28497624,PRJNA1093451,SAMN40654633,"run.zq,fastq,sra",SRX24099410,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O35,Orbicella faveolata,O35.fastq
+SRR28497625,PRJNA1093451,SAMN40654632,"sra,fastq,run.zq",SRX24099409,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O34,Orbicella faveolata,O34.fastq
+SRR28497626,PRJNA1093451,SAMN40654839,"run.zq,fastq,sra",SRX24099408,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P100,Porites astreoides,P100.fastq
+SRR28497627,PRJNA1093451,SAMN40654838,"sra,fastq,run.zq",SRX24099407,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P99,Porites astreoides,P99.fastq
+SRR28497628,PRJNA1093451,SAMN40654631,"sra,run.zq,fastq",SRX24099406,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O33,Orbicella faveolata,O33.fastq
+SRR28497629,PRJNA1093451,SAMN40654837,"run.zq,sra,fastq",SRX24099405,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P98,Porites astreoides,P98.fastq
+SRR28497630,PRJNA1093451,SAMN40654836,"sra,fastq,run.zq",SRX24099404,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P97,Porites astreoides,P97.fastq
+SRR28497631,PRJNA1093451,SAMN40654835,"fastq,sra,run.zq",SRX24099403,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P96,Porites astreoides,P96.fastq
+SRR28497632,PRJNA1093451,SAMN40654834,"run.zq,fastq,sra",SRX24099402,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P95,Porites astreoides,P95.fastq
+SRR28497633,PRJNA1093451,SAMN40654833,"sra,run.zq,fastq",SRX24099401,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P93,Porites astreoides,P93.fastq
+SRR28497634,PRJNA1093451,SAMN40654832,"sra,fastq,run.zq",SRX24099400,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P91,Porites astreoides,P91.fastq
+SRR28497635,PRJNA1093451,SAMN40654831,"sra,run.zq,fastq",SRX24099399,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P90,Porites astreoides,P90.fastq
+SRR28497636,PRJNA1093451,SAMN40654830,"fastq,sra,run.zq",SRX24099398,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P89,Porites astreoides,P89.fastq
+SRR28497637,PRJNA1093451,SAMN40654829,"fastq,run.zq,sra",SRX24099397,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P88,Porites astreoides,P88.fastq
+SRR28497638,PRJNA1093451,SAMN40654828,"sra,fastq,run.zq",SRX24099396,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P87,Porites astreoides,P87.fastq
+SRR28497639,PRJNA1093451,SAMN40654630,"sra,fastq,run.zq",SRX24099395,Dominican Republic,North America,18.365881 N 68.850397 W,Fundemar,O32,Orbicella faveolata,O32.fastq
+SRR28497640,PRJNA1093451,SAMN40654827,"sra,fastq,run.zq",SRX24099394,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P86,Porites astreoides,P86.fastq
+SRR28497641,PRJNA1093451,SAMN40654826,"fastq,sra,run.zq",SRX24099393,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P85,Porites astreoides,P85.fastq
+SRR28497642,PRJNA1093451,SAMN40654825,"run.zq,sra,fastq",SRX24099392,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P84,Porites astreoides,P84.fastq
+SRR28497643,PRJNA1093451,SAMN40654824,"fastq,run.zq,sra",SRX24099391,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P83,Porites astreoides,P83.fastq
+SRR28497644,PRJNA1093451,SAMN40654823,"run.zq,fastq,sra",SRX24099390,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P82,Porites astreoides,P82.fastq
+SRR28497645,PRJNA1093451,SAMN40654822,"run.zq,fastq,sra",SRX24099389,Dominican Republic,North America,18.339088 N 68.826408 W,Coco Reef,P81,Porites astreoides,P81.fastq
+SRR28497646,PRJNA1093451,SAMN40654821,"fastq,run.zq,sra",SRX24099388,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,P80,Porites astreoides,P80.fastq
+SRR28497647,PRJNA1093451,SAMN40654734,"run.zq,fastq,sra",SRX24099387,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A76,Agaricia agaricites,A76.fastq
+SRR28497648,PRJNA1093451,SAMN40654733,"fastq,sra,run.zq",SRX24099386,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A75,Agaricia agaricites,A75.fastq
+SRR28497649,PRJNA1093451,SAMN40654732,"run.zq,fastq,sra",SRX24099385,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A74,Agaricia agaricites,A74.fastq
+SRR28497650,PRJNA1093451,SAMN40654731,"fastq,run.zq,sra",SRX24099384,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A73,Agaricia agaricites,A73.fastq
+SRR28497651,PRJNA1093451,SAMN40654730,"fastq,sra,run.zq",SRX24099383,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A72,Agaricia agaricites,A72.fastq
+SRR28497652,PRJNA1093451,SAMN40654729,"fastq,sra,run.zq",SRX24099382,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A70,Agaricia agaricites,A70.fastq
+SRR28497653,PRJNA1093451,SAMN40654728,"sra,fastq,run.zq",SRX24099381,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A69,Agaricia agaricites,A69.fastq
+SRR28497654,PRJNA1093451,SAMN40654620,"fastq,sra,run.zq",SRX24099380,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O14,Orbicella faveolata,O14.fastq
+SRR28497655,PRJNA1093451,SAMN40654727,"sra,run.zq,fastq",SRX24099379,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A68,Agaricia agaricites,A68.fastq
+SRR28497656,PRJNA1093451,SAMN40654726,"run.zq,sra,fastq",SRX24099378,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A67,Agaricia agaricites,A67.fastq
+SRR28497657,PRJNA1093451,SAMN40654725,"run.zq,fastq,sra",SRX24099377,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A66,Agaricia agaricites,A66.fastq
+SRR28497658,PRJNA1093451,SAMN40654724,"run.zq,fastq,sra",SRX24099376,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A64,Agaricia agaricites,A64.fastq
+SRR28497659,PRJNA1093451,SAMN40654723,"fastq,sra",SRX24099375,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A63,Agaricia agaricites,A63.fastq
+SRR28497660,PRJNA1093451,SAMN40654722,"run.zq,fastq,sra",SRX24099374,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A62,Agaricia agaricites,A62.fastq
+SRR28497661,PRJNA1093451,SAMN40654721,"run.zq,sra,fastq",SRX24099373,Dominican Republic,North America,18.373555 N 69.005351 W,La Pared,A61,Agaricia agaricites,A61.fastq
+SRR28497662,PRJNA1093451,SAMN40654720,"sra,run.zq,fastq",SRX24099372,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A60,Agaricia agaricites,A60.fastq
+SRR28497663,PRJNA1093451,SAMN40654719,"run.zq,fastq,sra",SRX24099371,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A59,Agaricia agaricites,A59.fastq
+SRR28497664,PRJNA1093451,SAMN40654718,"sra,fastq",SRX24099370,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A58,Agaricia agaricites,A58.fastq
+SRR28497665,PRJNA1093451,SAMN40654619,"sra,fastq,run.zq",SRX24099369,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O13,Orbicella faveolata,O13.fastq
+SRR28497666,PRJNA1093451,SAMN40654717,"fastq,sra,run.zq",SRX24099368,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A57,Agaricia agaricites,A57.fastq
+SRR28497667,PRJNA1093451,SAMN40654716,"run.zq,sra,fastq",SRX24099367,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A56,Agaricia agaricites,A56.fastq
+SRR28497668,PRJNA1093451,SAMN40654715,"run.zq,sra,fastq",SRX24099366,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A55,Agaricia agaricites,A55.fastq
+SRR28497669,PRJNA1093451,SAMN40654714,"sra,fastq,run.zq",SRX24099365,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A54,Agaricia agaricites,A54.fastq
+SRR28497670,PRJNA1093451,SAMN40654713,"fastq,sra,run.zq",SRX24099364,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A53,Agaricia agaricites,A53.fastq
+SRR28497671,PRJNA1093451,SAMN40654712,"sra,run.zq,fastq",SRX24099363,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A52,Agaricia agaricites,A52.fastq
+SRR28497672,PRJNA1093451,SAMN40654711,"run.zq,sra,fastq",SRX24099362,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A51,Agaricia agaricites,A51.fastq
+SRR28497673,PRJNA1093451,SAMN40654710,"fastq,sra",SRX24099361,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A50,Agaricia agaricites,A50.fastq
+SRR28497674,PRJNA1093451,SAMN40654709,"sra,run.zq,fastq",SRX24099360,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A48,Agaricia agaricites,A48.fastq
+SRR28497675,PRJNA1093451,SAMN40654708,"sra,fastq,run.zq",SRX24099359,Dominican Republic,North America,18.37308 N 68.85326 W,La Playita,A47,Agaricia agaricites,A47.fastq
+SRR28497676,PRJNA1093451,SAMN40654618,"run.zq,fastq,sra",SRX24099358,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O12,Orbicella faveolata,O12.fastq
+SRR28497677,PRJNA1093451,SAMN40654609,"sra,fastq,run.zq",SRX24099357,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O2,Orbicella faveolata,O2.fastq
+SRR28497678,PRJNA1093451,SAMN40654608,"fastq,sra,run.zq",SRX24099356,Dominican Republic,North America,18.26166 N 68.799564 W,El Penon,O1,Orbicella faveolata,O1.fastq

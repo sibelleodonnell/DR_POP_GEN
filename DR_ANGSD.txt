@@ -1,0 +1,245 @@
+# ----------------- Installing angsd: refer to https://github.com/ANGSD/angsd
+# This project used ANGSD version 0.932
+# "FUZZY genotyping" with ANGSD - without calling actual genotypes but working with genotype likelihoods at each SNP. Optimal for low-coverage data (<10x).
+
+# listing all bam filenames 
+ls *bam >bams
+
+module load htslib
+module load zlib
+module load bzip2
+module load curl
+module load openblas/0.3.20
+module load r
+
+# ----------------- STEP 1: Quality Filtering and Qrank output file
+# angsd settings:
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -maxDepth 520"
+TODO="-doQsDist 1 -doDepth 1 -doCounts 1 -dumpCounts 2"
+
+#Chromosome - change for correct species. Find in the header of .sam files
+# Past CHR="000000F_1"
+# Ofav CHR="NW_018148670.1"
+# Agar has no chromosome header (since we mapped to a denovo genome)
+
+CHR="NW_018148670.1"
+
+angsd -b bams -r $CHR -GL 1 $FILTERS $TODO -P 1 -out Sp
+
+Rscript /project/path/to/plotQC.R prefix=dd bams=bams > qranks
+
+#Remove low quality samples based on qranks file (For DR project, samples <.10) and ddpdf plots (fraction of sites v sample depth, fraction of sites v genotyping rate cutoff)
+
+# ----------------- STEP 2: Initial ibsMat
+# Set maxDepth to 10x the number of samples in your bams file
+# Set minInd to 80% the number of samples in your bams file
+
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -maxDepth 800 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 8 -snp_pval 1e-5 -minMaf 0.05 -geno_minDepth 2"
+
+TODO="-doMajorMinor 1 -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doBcf 1 -doPost 1 -doGlf 2"
+
+angsd -b bams -GL 1 $FILTERS $TODO -P 1 -out SppName_out_whole
+
+### sftp bams file and .ibsMat file to Desktop, plot dendrograms in R following ANGSD_ibs.R in repo ###
+
+# ----------------- STEP 2.5: FOR AGAR ONLY (removing linked loci by setting sites filter in ANGSD)
+# Removing linked loci for Agaricia by -sites setting rather than ngsLD due mapping to a denovo reference 
+# Performed prior to clonal removal due to lack of technical replicates for confident clonal verification 
+# Method is used to tell ANGSD to only consider tags with one site on them when creating analyzing population structure
+
+gzip -d Agar_out_whole.geno.gz
+awk '{print $1}' Agar_out_whole.geno > tag.txt
+awk '{print $2}' Agar_out_whole.geno > sites.txt
+paste tag.txt sites.txt > tag_site.txt
+
+# sftp out tag_site.txt and proceed to R script in repo: Site_setting.R 
+# From R script, sftp in resulting unique_tag_site.txt file and continue following code below
+
+sort -u -o Agar_final_site.txt unique_tag_site
+
+# ANGSD settings same as STEP 2 plus the additional -sites filter
+
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -maxDepth 800 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 8 -snp_pval 1e-5 -minMaf 0.05 -geno_minDepth 2 -sites Agar_final_site.txt"
+
+TODO="-doMajorMinor 1 -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doBcf 1 -doPost 1 -doGlf 2"
+
+#For getting unique files
+sort -u -o Agar_final_site.txt unique_tag_site.txt
+
+#Be sure your file has no header and remove quotations around tag names. Then index file. 
+sed -i 's/"//g' Agar_final_site.txt
+angsd sites index Agar_final_site.txt
+
+angsd -b bams -GL 1 $FILTERS $TODO -P 1 -out Agar_Final_out_whole
+
+# ----------------- STEP 3: Pruning clones
+
+# sftp bams and ibsMat files to Desktop and continue to DR_ibs.R
+# Prune clones based on depth of technical replicates in the ibs dendrogram. For species with high clonality (Porites) or no technical replicates (Agaricia), repeat this step by removing all but one sample from each clonal cluster (retain the sample with the highest qrank value for each clonal group), creating a new, pruned bams file, and rerunning ANGSD (STEP2). Keep all technical replicates in your new bams file. Return to R and plot ibs dendrogram to inspect for more clones. 
+
+#Rerun angsd on pruned bams file with same filters as STEP 2
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -maxDepth 800 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 8 -snp_pval 1e-5 -minMaf 0.05 -geno_minDepth 2"
+
+TODO="-doMajorMinor 1 -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doBcf 1 -doPost 1 -doGlf 2"
+
+angsd -b bams -GL 1 $FILTERS $TODO -P 1 -out SppName_noclones_out_whole
+
+#sftp bam and .ibsMat file to comuputer
+#Plot resulting .ibsMat in order to identify and prune clones. Once you have only unique genotypes remaining, this is your final sample set for downstream population analyses.
+
+# ----------------- STEP 4: FOR PAST AND OFAV ONLY (ngsLD)
+
+# ngsLD - A program to estimate pairwise linkage disequilibrium
+# Fox EA, Wright AE, Fumagalli M, and Vieira FG ngsLD: evaluating linkage disequilibrium using genotype likelihoods. Bioinformatics (2019) 35(19):3855 - 3856
+# Used to remove linked loci after no clones remain in the dataset (post dendrogram), but before doing any downstream population analyses (pre admixture and Fst)
+### Follow steps to install ngsLD: https://github.com/fgvieira/ngsLD
+
+module list
+module load gcc/8.3.0
+module load intel/18.0.4
+module load gsl/2.5
+module list
+module load conda
+module load rust
+
+#Check ngsLD is working run 'ngsLD'
+ngsLD
+
+#zcat geno.gz file of clonal pruned final dataset post dendrograms to get number of sites
+zcat Spp_final_noclones_out_whole.geno.gz | head
+
+#save as number of sites
+NS=`zcat Spp_final_noclones_out_whole.geno.gz | wc -l`
+echo $NS
+
+#sites file for --pos filter in ngsLD
+zcat Spp_final_noclones_out_whole.mafs.gz | tail -n +2 | cut -f1,2 > sites
+head sites 
+
+#running ngsLD to prune linked loci
+#change n_ind to appropriate value
+ngsLD --geno Spp_final_noclones_out_whole.geno.gz --n_ind 62 --n_sites $NS --pos sites --out Spp_ngsLD
+head Spp_ngsLD 
+
+#### now prune linked sites using _ngsLD file
+###I made a conda environment but then learned the new ngsLD prune command uses Rust - see below for installing correct version of Rust
+#### conda activate ngs
+
+#Have to load 2018 version of rust to work for prune_graph installation. Only have to run this once: 
+git clone https://github.com/fgvieira/prune_graph.git ###for prune_graph###
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh ###for rust###
+rustup install 1.31.0 ###specific rust version###
+cargo build --release
+cargo test
+###^^Be sure to do this in the created prune_graph directory after running GitHub installation
+
+#Sftp out the _ngsLD file, open in excel and replace any #NAME values with NAN
+#^ For DR_POP_GEN project: for values with NAN but a distance >50,000, keep those site pairs. Remove all other NAN value site pairs
+# Save as a ngsLD.txt file (you can keep the header) and sftp .txt file back into the terminal. 
+# put file back into working directory
+
+##With preset prune_graph filters
+# ./target/release/prune_graph --in Ofav_ngsLD.txt --out test.out
+##
+
+#####prune_graph filter settings from ngsLD GitHub example. Changed r2 to .1
+/scratch1/seodonne/prune_graph/target/release/prune_graph --header --in Spp_ngsLD.txt --weight-field "r2" --weight-filter "dist <= 50000 && r2 >= 0.1" --out SppLD_unlinked.pos
+#Get both chromosome and position for the angsd site setting 
+sed 's/:/\t/g' SppLD_unlinked.pos > SppLD_unlinked.sites
+sort SppLD_unlinked.sites >sorted.SppLD_unlinked.sites
+#####
+
+#module load all necessary angsd packages and run:
+angsd sites index sorted.SppLD_unlinked.sites
+
+
+######### Setting sites using unlinked file directly in ANGSD run.#########
+#Set minInd to 50% number of samples, maxDepth to 10X number of samples
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -maxDepth 620 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 31 -snp_pval 1e-5 -minMaf 0.05"
+
+TODO="-doMajorMinor 1 -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doBcf 1 -doPost 1 -doGlf 2"
+
+angsd -sites sorted.SppLD_unlinked.sites -b bams_final -GL 1 $FILTERS $TODO -P 1 -out Spp_final_LD
+
+# record sites remaining
+######### The files output from this run are the ones which will be used in Admixture and Fst steps #########
+
+# ----------------- STEP 5: Admixture (NGS Admix and ADMIXTURE)
+###NgsAdmix###
+# for K from 2 to 6 : run each k 10 times - ngsAdmix is limited to calling a minimum of 2 populations - see ADMIXTURE below to determine if K=1
+#this for loop will spit out a list of commands - paste them into a shell script (ex name: NGSadmix.sh) and run as a job
+for j in `seq 1 20` ;
+do
+    for i in `seq 1 10` ; 
+    do
+        echo NGSadmix -likes Past_final_LD.beagle.gz -minMaf 0.05 -P 10 -K ${i} -o Past_final_LD_k${i}run${j}
+    done
+done
+
+chmod +x *log
+chmod +x *qopt
+#sftp all log and qopt files onto computer in a separate admixture folder for each species - used in DR_ibs_pcoa_admix.R ADMIXTURE step
+#sftp bam file as well for plotting in R
+
+###ADMIXTURE###
+module load openblas/0.3.20 
+module load plink2
+plink --vcf Spp_final_LD.bcf --make-bed --allow-extra-chr --double-id --out ADMIX_res20
+
+# ADMIXTURE does not accept chromosome names that are not human chromosomes. We will thus just exchange the first column by 0
+awk '{$1="0"; print $0}' ADMIX_res20.bim > ADMIX_res20.bim.tmp
+cp ADMIX_res20.bim.tmp ADMIX_res20.bim
+for j in `seq 1 10` ;
+do
+	for K in `seq 1 6`;
+	do
+echo admixture --cv ADMIX_res20.bed $K \| tee ADMIX_res20_${K}run${j}.out
+	done
+done
+# paste output into shell script (ex name:ADMIX.sh) and run as job
+# choose K based on least CV error
+grep -h CV admixreal.out > PastLDchooseK.txt
+
+#Once K is chosen based on C-val err (PastLDchooseK.txt), pull out the correct K run .Q file
+cp ADMIX_res20.1.Q Past_K1.txt
+chmod +x Past_K1.txt
+
+# ----------------- STEP 6: pairwise Fst using vcftools
+# to see sample names
+module load bcftools
+#make 5 list files (1 for each site) and have a list of all of the samples at that site. 
+#File names should be CR, FM, EP, PL, PA
+# Example: nano CR and then type out the list of all non-clonal samples at that site
+module load vcftools
+# first convert to vcf file
+bcftools convert -O v -o Past_final_LD.vcf Past_final_LD.bcf
+
+## paste this list into file called pops
+PA
+PL
+FM
+CR
+EP
+##
+
+#Run lines below in the terminal, then paste outputs into a shell script to run as a job (ex name: Fst.sh)
+for i in `cat ./pops`; do echo vcftools --vcf Past_final_LD.vcf --weir-fst-pop PA --weir-fst-pop $i --out Past_PA_LD_$i ; done
+for i in `cat ./pops`; do echo vcftools --vcf Past_final_LD.vcf --weir-fst-pop PL --weir-fst-pop $i --out Past_PL_LD_$i ; done
+for i in `cat ./pops`; do echo vcftools --vcf Past_final_LD.vcf --weir-fst-pop FM --weir-fst-pop $i --out Past_FM_LD_$i ; done
+for i in `cat ./pops`; do echo vcftools --vcf Past_final_LD.vcf --weir-fst-pop CR --weir-fst-pop $i --out Past_CR_LD_$i ; done
+for i in `cat ./pops`; do echo vcftools --vcf Past_final_LD.vcf --weir-fst-pop EP --weir-fst-pop $i --out Past_EP_LD_$i ; done
+
+sbatch Fst.sh
+
+#Collect pairwise Fst values into one file
+grep "mean Fst" fst*.err | sed 's/Weir and Cockerham mean Fst estimate: //g' > Past_meanFst_LD.txt
+grep "weighted Fst" fst*.err | sed 's/Weir and Cockerham weighted Fst estimate: //g' > Past_weightFst_LD.txt
+grep "\--out" fst*.err | sed 's/\--out //g' | awk '$1=$1' > Past_PopPairs_LD.txt
+
+paste Past_PopPairs_LD.txt Past_meanFst_LD.txt Past_weightFst_LD.txt > Past_FstFinal_LD.txt
+
+#sftp Past_FstFinal_LD.txt onto computer for plotting in R
+
+# ----------------- DONE: Continue moving through DR_ibs_pcoa_admix.R
+
+
