@@ -27,7 +27,7 @@ Bioinformatic workflow for processing 2bRAD sample reads. Custom scripts used in
 ANGSD workflow and commands used to anaylze population structure by species. Notes within the code indicate differences in workflow by species. This script is run in tandem with R-scripts to visualize population strucuture and plot final figures. Final bam sample lists, .ibsMat files, and Fst values used for plotting final paper figures for each species are also listed.
 
 - Accompanying R-scripts
-  - Agaricia_RmLinkedSites.R
+  - Fst_95Intervals.R
   - plotQC.R
   - DR_ibs_pcoa_admix.R
 - Final datasets and bam files
