@@ -37,9 +37,15 @@ ANGSD workflow and commands used to anaylze population structure by species. Not
   - Ofav_final_LD.ibsMat
   - Past_final.ibsMat
   - Agar_final_.ibsMat
-  - Ofav_FstFinal_LD.txt
-  - Past_FstFinal_LD.txt
-  - Agar_FstFinal.txt
+  - Ofav_HardCall_FstFinal_LD.txt
+  - Past_HardCall_FstFinal_LD.txt
+  - Agar_HardCall_FstFinal.txt
+  - Agar_FstGlobal.txt
+  - Past_FstGlobal.txt
+  - Ofav_FstGlobal.txt
+  - Agar_boot_fst_results.txt
+  - Past_boot_fst_results.txt
+  - Ofav_boot_fst_results.txt
  
   
 
