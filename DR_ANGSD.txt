@@ -43,6 +43,7 @@ angsd -b bams -GL 1 $FILTERS $TODO -P 1 -out SppName_out_whole
 ### sftp bams file and .ibsMat file to Desktop, plot dendrograms in R following ANGSD_ibs.R in repo ###
 
 # ----------------- STEP 2.5: FOR AGAR ONLY (removing linked loci by setting sites filter in ANGSD)
+#Can just use AgarC_final_site.txt, or see below for how to remove linked loci
 # Removing linked loci for Agaricia by -sites setting rather than ngsLD due mapping to a denovo reference 
 # Performed prior to clonal removal due to lack of technical replicates for confident clonal verification 
 # Method is used to tell ANGSD to only consider tags with one site on them when creating analyzing population structure
@@ -52,23 +53,20 @@ awk '{print $1}' Agar_out_whole.geno > tag.txt
 awk '{print $2}' Agar_out_whole.geno > sites.txt
 paste tag.txt sites.txt > tag_site.txt
 
-# sftp out tag_site.txt and proceed to R script in repo: Site_setting.R 
-# From R script, sftp in resulting unique_tag_site.txt file and continue following code below
+# sftp out tag_site.txt and remove Tags with more than one Site
 
-sort -u -o Agar_final_site.txt unique_tag_site
+sort -u -o AgarC_final_site.txt unique_tag_site
 
 # ANGSD settings same as STEP 2 plus the additional -sites filter
 
-FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -maxDepth 800 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 8 -snp_pval 1e-5 -minMaf 0.05 -geno_minDepth 2 -sites Agar_final_site.txt"
+FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 25 -maxDepth 800 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 8 -snp_pval 1e-5 -minMaf 0.05 -geno_minDepth 2 -sites AgarC_final_site.txt"
 
 TODO="-doMajorMinor 1 -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doBcf 1 -doPost 1 -doGlf 2"
 
-#For getting unique files
-sort -u -o Agar_final_site.txt unique_tag_site.txt
 
 #Be sure your file has no header and remove quotations around tag names. Then index file. 
-sed -i 's/"//g' Agar_final_site.txt
-angsd sites index Agar_final_site.txt
+sed -i 's/"//g' AgarC_final_site.txt
+angsd sites index AgarC_final_site.txt
 
 angsd -b bams -GL 1 $FILTERS $TODO -P 1 -out Agar_Final_out_whole
 
@@ -204,7 +202,215 @@ grep -h CV admixreal.out > PastLDchooseK.txt
 cp ADMIX_res20.1.Q Past_K1.txt
 chmod +x Past_K1.txt
 
-# ----------------- STEP 6: pairwise Fst using vcftools
+# ----------------- STEP 6: Calculating global pairwise Fst using ANGSD
+#####Input into a shell script (global_fst.sh)#####
+
+#!/bin/bash
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=4GB
+#SBATCH --time=00:45:00
+#SBATCH --error=globalfst.err
+#SBATCH --output=globalfst.out
+
+
+# Define variables
+REF_GENOME="/project/ckenkel_26/RefSeqs/OfavGenome_New/Ofav_v1.0_symABCD_longref.fasta"
+POP1_BAM_LIST=EP
+POP2_BAM_LIST=FM
+POP3_BAM_LIST=PL
+POP4_BAM_LIST=PA
+POP5_BAM_LIST=CR
+OUT_DIR="."
+SITES_FILE=sorted.OfavLD_unlinked.sites
+
+# Create output directories
+mkdir -p ${OUT_DIR}/pop1
+mkdir -p ${OUT_DIR}/pop2
+mkdir -p ${OUT_DIR}/pop3
+mkdir -p ${OUT_DIR}/pop4
+mkdir -p ${OUT_DIR}/pop5
+mkdir -p ${OUT_DIR}/fst
+
+# Step 1: Calculate the SAF for each population
+angsd -b ${POP1_BAM_LIST} -anc ${REF_GENOME} -out ${OUT_DIR}/pop1/pop1 -dosaf 1 -gl 1 -sites ${SITES_FILE}
+angsd -b ${POP2_BAM_LIST} -anc ${REF_GENOME} -out ${OUT_DIR}/pop2/pop2 -dosaf 1 -gl 1 -sites ${SITES_FILE}
+angsd -b ${POP3_BAM_LIST} -anc ${REF_GENOME} -out ${OUT_DIR}/pop3/pop3 -dosaf 1 -gl 1 -sites ${SITES_FILE}
+angsd -b ${POP4_BAM_LIST} -anc ${REF_GENOME} -out ${OUT_DIR}/pop4/pop4 -dosaf 1 -gl 1 -sites ${SITES_FILE}
+angsd -b ${POP5_BAM_LIST} -anc ${REF_GENOME} -out ${OUT_DIR}/pop5/pop5 -dosaf 1 -gl 1 -sites ${SITES_FILE}
+
+# Step 2: Estimate the 2D-SFS prior
+pop_pairs=( "pop1_pop2" "pop1_pop3" "pop1_pop4" "pop1_pop5" 
+            "pop2_pop3" "pop2_pop4" "pop2_pop5"
+            "pop3_pop4" "pop3_pop5"
+            "pop4_pop5" )
+
+for pair in "${pop_pairs[@]}"
+do
+  pop1=$(echo $pair | cut -d'_' -f1)
+  pop2=$(echo $pair | cut -d'_' -f2)
+  
+  realSFS ${OUT_DIR}/${pop1}/${pop1}.saf.idx ${OUT_DIR}/${pop2}/${pop2}.saf.idx -P 4 > ${OUT_DIR}/fst/${pair}.sfs
+done
+
+# Step 3: Calculate the Fst index
+for pair in "${pop_pairs[@]}"
+do
+  pop1=$(echo $pair | cut -d'_' -f1)
+  pop2=$(echo $pair | cut -d'_' -f2)
+  
+  realSFS fst index ${OUT_DIR}/${pop1}/${pop1}.saf.idx ${OUT_DIR}/${pop2}/${pop2}.saf.idx -sfs ${OUT_DIR}/fst/${pair}.sfs -fstout ${OUT_DIR}/fst/${pair}
+done
+
+
+# Step 4: Get the global Fst estimate
+for pair in "${pop_pairs[@]}"
+do
+  realSFS fst stats ${OUT_DIR}/fst/${pair}.fst.idx > ${OUT_DIR}/fst/${pair}_global_fst.txt
+done
+#####
+sbatch global_fst.sh
+
+
+
+
+# ----------------- STEP 6.5: Bootstrapping 95% confidence intervals for global Fst values
+#####Input into a shell script (bootstrapping.sh)#####
+
+#!/bin/bash
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=8GB
+#SBATCH --time=00:45:00
+#SBATCH --error=boot.err
+#SBATCH --output=boot.out
+
+POP1_IDX=/scratch1/seodonne/DR_bams/Ofav_bams/pop1/pop1.saf.idx 
+POP2_IDX=/scratch1/seodonne/DR_bams/Ofav_bams/pop2/pop2.saf.idx 
+POP3_IDK=/scratch1/seodonne/DR_bams/Ofav_bams/pop3/pop3.saf.idx 
+POP4_IDX=/scratch1/seodonne/DR_bams/Ofav_bams/pop4/pop4.saf.idx 
+POP5_IDX=/scratch1/seodonne/DR_bams/Ofav_bams/pop5/pop5.saf.idx 
+
+
+#Bootstrap for each population pair
+realSFS -bootstrap 100 ${POP1_IDX} ${POP2_IDX} > pop1pop2.sfs
+
+realSFS -bootstrap 100 ${POP1_IDX} ${POP3_IDX} > pop1pop3.sfs
+
+realSFS -bootstrap 100 ${POP1_IDX} ${POP4_IDX} > pop1pop4.sfs
+
+realSFS -bootstrap 100 ${POP1_IDX} ${POP5_IDX} > pop1pop5.sfs
+
+realSFS -bootstrap 100 ${POP2_IDX} ${POP3_IDX} > pop2pop3.sfs
+
+realSFS -bootstrap 100 ${POP2_IDX} ${POP4_IDX} > pop2pop4.sfs
+
+realSFS -bootstrap 100 ${POP2_IDX} ${POP5_IDX} > pop2pop5.sfs
+
+realSFS -bootstrap 100 ${POP3_IDX} ${POP4_IDX} > pop3pop4.sfs
+
+realSFS -bootstrap 100 ${POP3_IDX} ${POP5_IDX} > pop3pop5.sfs
+
+realSFS -bootstrap 100 ${POP4_IDX} ${POP5_IDX} > pop4pop5.sfs
+
+
+##### Chmod +x and run job #####
+
+#Move resulting *sfs files to bootstraps directory (if not already there)
+mv *sfs bootstraps
+cd bootstraps
+#Each sfs file contains a line per bootstrap run (100 lines each)
+
+##### Input into shell script (fstboot.sh) #####
+#!/bin/bash
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=8GB
+#SBATCH --time=00:45:00
+#SBATCH --error=foot.err
+#SBATCH --output=foot.out
+
+# Define the list of population pairs and the number of bootstraps
+pop_pairs=("pop1pop2" "pop1pop4" "pop2pop3" "pop2pop5" "pop3pop5" "pop1pop3" "pop1pop5" "pop2pop4" "pop3pop4" "pop4pop5")
+num_bootstraps=100
+
+# Define the base path to the SAF files (change this to match your directory structure)
+base_saf_path="/scratch1/seodonne/DR_bams/Agar_bams"
+
+# Loop through each population pair
+for pair in "${pop_pairs[@]}"; do
+  # Extract the individual population names from the pair
+  pop1=$(echo $pair | grep -oP '(?<=pop)\d+' | head -n 1)
+  pop2=$(echo $pair | grep -oP '(?<=pop)\d+' | tail -n 1)
+
+  # Construct the paths to the SAF files for each population
+  saf_path_pop1="${base_saf_path}/pop${pop1}/pop${pop1}.saf.idx"
+  saf_path_pop2="${base_saf_path}/pop${pop2}/pop${pop2}.saf.idx"
+
+  # Loop through each bootstrap iteration
+  for ((i=1; i<=$num_bootstraps; i++)); do
+    # Extract the SFS values for the current bootstrap iteration
+    sfs_line=$(sed -n "${i}p" ${pair}.sfs)
+
+    # Write the SFS values to a temporary file
+    sfs_tmp_file=$(mktemp)
+    echo $sfs_line > $sfs_tmp_file
+
+    # Run the FST index command
+    realSFS fst index ${saf_path_pop1} ${saf_path_pop2} -sfs $sfs_tmp_file -fstout ${pair}_boot${i}.fst.idx
+
+    # Remove the temporary file
+    rm $sfs_tmp_file
+
+    # Extract FST values
+    realSFS fst stats ${pair}_boot${i}.fst.idx.fst.idx > ${pair}_boot${i}_fst.txt
+  done
+done
+
+##### chmod +x and run #####
+
+#Combining all fst results into one final file for calculating confidence intervals in R
+
+##### combfst.sh #####
+
+#!/bin/bash
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=4GB
+#SBATCH --time=00:45:00
+#SBATCH --error=comb.err
+#SBATCH --output=comb.out
+
+# Define the list of population pairs and the number of bootstraps
+pop_pairs=("pop1pop2" "pop1pop4" "pop2pop3" "pop2pop5" "pop3pop5" "pop1pop3" "pop1pop5" "pop2pop4" "pop3pop4" "pop4pop5")
+num_bootstraps=100
+
+# Define the output file
+output_file="Agar_boot_fst_results.txt"
+
+# Create or clear the output file
+> $output_file
+
+# Loop through each population pair
+for pair in "${pop_pairs[@]}"; do
+  # Loop through each bootstrap iteration
+  for ((i=1; i<=$num_bootstraps; i++)); do
+    # Construct the FST output file name
+    fst_file="${pair}_boot${i}_fst.txt"
+
+    # Check if the FST output file exists
+    if [[ -f $fst_file ]]; then
+      # Read the FST value from the file
+      fst_value=$(awk '{print $1, $2}' $fst_file)
+
+      # Append the population pair, bootstrap iteration, and FST value to the output file
+      echo -e "${pair}_boot${i}\t${fst_value}" >> $output_file
+    fi
+  done
+done
+
+##### Run #####
+sbatch combfst.sh
+# sftp out final file and continue in Fst_95Intervals.R
+
+
+# ----------------- STEP 7: Hard-call genotype pairwise Fst using vcftools
 # to see sample names
 module load bcftools
 #make 5 list files (1 for each site) and have a list of all of the samples at that site. 
@@ -230,6 +436,7 @@ for i in `cat ./pops`; do echo vcftools --vcf Past_final_LD.vcf --weir-fst-pop C
 for i in `cat ./pops`; do echo vcftools --vcf Past_final_LD.vcf --weir-fst-pop EP --weir-fst-pop $i --out Past_EP_LD_$i ; done
 
 sbatch Fst.sh
+
 
 #Collect pairwise Fst values into one file
 grep "mean Fst" fst*.err | sed 's/Weir and Cockerham mean Fst estimate: //g' > Past_meanFst_LD.txt
